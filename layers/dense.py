@@ -3,7 +3,7 @@
 import numpy as np
 
 
-class DenseLayer:
+class Dense:
     def __init__(self, n_inputs: int, n_neurons: int) -> None:
         # Initialize weigths and biases
         # We set the shape of weights as (inputs, neurons)
