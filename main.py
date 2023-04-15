@@ -5,8 +5,7 @@ import nnfs
 from nnfs.datasets import spiral_data
 
 # Import the NN utils
-from activation.relu import ReLU
-from activation.softmax import Softmax
+from activation import ReLU, Softmax
 from layers.dense import Dense
 
 # Init the configuration of nnfs

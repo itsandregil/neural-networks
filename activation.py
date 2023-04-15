@@ -1,6 +1,13 @@
-"""Implementation of the Softmax Activation Function"""
+"""Activation Functions implementations"""
 
 import numpy as np
+
+
+class ReLU:
+    """Rectified Linear Unit"""
+    
+    def forward(self, inputs):
+        self.output = np.maximum(0, inputs)
 
 
 class Softmax:
