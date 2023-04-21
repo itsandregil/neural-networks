@@ -16,9 +16,6 @@ nnfs.init()
 # Load data
 X_train, y_train = spiral_data(samples=100, classes=3)
 
-# Create hard code target classes (y_train)
-y_train = np.array([[1, 0, 0], [0, 1, 0], [0, 1, 0]])
-
 # Create a dense layer with 2 inputs and 3 neurons
 dense1 = Dense(2, 3)
 dense1.forward(X_train)  # Perform a forward pass
@@ -35,10 +32,10 @@ dense2.forward(activation1.output)
 # solve a multiple classificacion problem
 activation2 = Softmax()
 activation2.forward(dense2.output)
-print(activation2.output[:3])
+print(activation2.output[:10])
 
 # Create a loss function
 loss_function = CategoricalCrossEntropy()
 # Calculate the loss using the softmax activation function layer
-loss = loss_function.calculate(activation2.output[:3], y_train)
-print(loss)
+loss = loss_function.calculate(activation2.output, y_train)
+print(f"loss: {loss}")
