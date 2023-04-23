@@ -39,3 +39,13 @@ loss_function = CategoricalCrossEntropy()
 # Calculate the loss using the softmax activation function layer
 loss = loss_function.calculate(activation2.output, y_train)
 print(f"loss: {loss}")
+
+# Calculate the Accurary of the Model
+# Accuracy: Mean value of how many times the prediction was correct
+predictions = np.argmax(activation2.output, axis=1)
+
+if len(y_train.shape) == 2:
+    y_train = np.argmax(y_train, axis=1)
+
+accuracy = np.mean(predictions == y_train)
+print(f"Acc: {accuracy}")
